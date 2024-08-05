@@ -1,0 +1,28 @@
+{
+    "chain_name": "empe",
+    "registry_name": "empe",
+    "api": [
+        {"provider": "Aldebaranode", "address": "https://api-empe-testnet.aldebaranode.xyz"}
+    ], 
+    "rpc": [
+        {"provider": "Aldebaranode", "address": "https://rpc-empe-testnet.aldebaranode.xyz"}
+    ],
+    "sdk_version": "0.47.4",
+    "coin_type": "118",
+    "min_tx_fee": "500",
+    "addr_prefix": "empe",
+    "logo": "/logos/empe.png",
+    "assets": [{
+        "base": "uempe",
+        "symbol": "EMPE",
+        "exponent": "6", 
+        "coingecko_id": "",
+        "logo": "/logos/empe.png"
+    }],
+    "faucet": {
+        "amount": "10000000uempe",
+        "ip_limit": "1",
+        "address_limit": "2",
+        "fees": "1uempe"
+    }
+}
