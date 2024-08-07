@@ -24,7 +24,7 @@ jobs:
         uses: docker/metadata-action@v3
         with:
           images: |
-            ${{ secrets.DOCKERHUB_USERNAME }}/cosmos-explorer
+            syhdtmp/cosmos-explorer
           tags: |
             type=sha
             type=schedule
@@ -48,6 +48,6 @@ jobs:
         run: |
           sshpass -p ${{ secrets.SSH_PASSWORD }} ssh -o StrictHostKeyChecking=no ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} << EOF
             sudo su
-            docker pull ${{ secrets.DOCKERHUB_USERNAME }}/cosmos-explorer:latest
-            docker run -d --name cosmos-explorer -p 5001:80 ${{ secrets.DOCKERHUB_USERNAME }}/cosmos-explorer:latest
+            docker pull syhdtmp/cosmos-explorer:latest
+            docker run -d --name cosmos-explorer -p 5001:80 syhdtmp/cosmos-explorer:latest
           EOF
