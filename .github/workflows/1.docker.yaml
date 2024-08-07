@@ -3,7 +3,7 @@ name: docker
 on:
   push:
     branches:
-      - 'main'
+      - main
 
 jobs:
   docker:
@@ -21,7 +21,7 @@ jobs:
         uses: docker/metadata-action@v3
         with:
           images: |
-            syhdtmp/cosmos-explorer
+            ${{ secrets.DOCKERHUB_USERNAME }}/cosmos-explorer
           tags: |
             type=sha
             type=schedule
