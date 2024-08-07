@@ -52,6 +52,6 @@ jobs:
         run: |
           sshpass -p $SSH_PASSWORD ssh -o StrictHostKeyChecking=no $SSH_USER@$SSH_HOST << EOF
             sudo su
-            docker pull syhdtmp/cosmos-explorer:latest
-            docker run -d --name cosmos-explorer -p 5001:80 syhdtmp/cosmos-explorer:latest
+            docker pull syhdtmp/cosmos-explorer:main
+            docker run -d --name cosmos-explorer -p 5001:80 syhdtmp/cosmos-explorer:main
           EOF
