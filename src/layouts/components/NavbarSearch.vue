@@ -2,21 +2,15 @@
 import { Icon } from '@iconify/vue';
 import { onMounted, ref } from 'vue';
 import { useRouter } from 'vue-router';
-
 import { useBlockchain } from '@/stores';
+
+const { searchModalShow, closeSearchModal } = defineProps(['searchModalShow', 'closeSearchModal'])
+
 const vueRouters = useRouter();
 const blockStore = useBlockchain();
-let searchModalShow = ref(false);
 let searchQuery = ref('');
 let errorMessage = ref('');
 onMounted(() => {});
-
-function closeSearchModal() {
-  searchModalShow.value = false;
-}
-function openSearchModal() {
-  searchModalShow.value = true;
-}
 
 function preventClick(event: any) {
   event.preventDefault();
@@ -61,15 +55,6 @@ function confirm() {
 </script>
 <template>
   <div>
-    <button
-      class="btn btn-ghost btn-circle btn-sm mx-1"
-      @click="openSearchModal"
-    >
-      <Icon
-        icon="mdi:magnify"
-        class="text-2xl text-gray-500 dark:text-gray-400"
-      />
-    </button>
 
     <!-- modal -->
     <div

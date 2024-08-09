@@ -18,6 +18,7 @@ import type { NavGroup, NavLink, NavSectionTitle, VerticalNavItems } from '../ty
 import dayjs from 'dayjs';
 import { PerfectScrollbar } from 'vue3-perfect-scrollbar'
 
+let searchModalShow = ref(false);
 const dashboard = useDashboard();
 dashboard.initial();
 const blockchain = useBlockchain();
@@ -45,6 +46,9 @@ const changeOpen = (index: Number) => {
     sidebarOpen.value = !sidebarOpen.value;
   }
 };
+const closeSearchModal = () => {
+  searchModalShow.value = false;
+}
 const showDiscord = window.location.host.search('ping.pub') > -1;
 
 function isNavGroup(nav: VerticalNavItems | any): nav is NavGroup {
@@ -75,7 +79,8 @@ dayjs()
 <template>
   <div class="light:bg-gray-100 dark:bg-dark">
     <!-- sidebar -->
-    <div class="w-64 fixed z-50 left-0 top-0 bottom-0 overflow-auto bg-base-100 border-r border-gray-100 dark:border-gray-700"
+    <div
+      class="w-64 fixed z-50 left-0 top-0 bottom-0 overflow-auto bg-base-100 border-r border-gray-100 dark:border-gray-700"
       :class="{ block: sidebarShow, 'hidden xl:!block': !sidebarShow }">
       <div class="flex justify-between mt-1 pl-4 py-4 mb-1">
         <RouterLink to="/" class="flex items-center">
@@ -117,7 +122,7 @@ dayjs()
                   '!bg-primary': selected($route, el),
                 }" :to="el.to">
                 <Icon v-if="!el?.icon?.image" icon="mdi:chevron-right" class="mr-2 ml-3" :class="{
-                  'text-gray-900 dark:text-white':
+                  'text-gray-900 text-white dark:text-white':
                     $route.path === el?.to?.path &&
                     item?.title !== 'Favorite',
                 }" />
@@ -125,7 +130,7 @@ dayjs()
                   'border border-gray-300 bg-white': selected($route, el),
                 }" />
                 <div class="text-base capitalize text-gray-500 dark:text-gray-300" :class="{
-                  'text-gray-900 dark:text-white': selected($route, el),
+                  'text-gray-900 text-white dark:text-white': selected($route, el),
                 }">
                   {{ item?.title === 'Favorite' ? el?.title : $t(el?.title) }}
                 </div>
@@ -197,7 +202,10 @@ dayjs()
     </div>
     <div class="xl:!ml-64 px-3 pt-4">
       <!-- header -->
-      <div class="flex items-center py-3 bg-base-100 mb-4 rounded px-4 sticky top-0 z-10">
+      <div class="flex items-center py-3 bg-base-100 mb-4 rounded px-4 sticky top-0 z-10 
+        bg-opacity-60 backdrop-blur transition-shadow duration-100 [transform:translate3d(0,0,0)] 
+        shadow-sm
+        ">
         <div class="text-2xl pr-3 cursor-pointer xl:!hidden" @click="sidebarShow = true">
           <Icon icon="mdi-menu" />
         </div>
@@ -209,9 +217,12 @@ dayjs()
         <!-- <NavSearchBar />-->
         <NavBarI18n class="hidden md:!inline-block" />
         <NavbarThemeSwitcher class="!inline-block" />
-        <NavbarSearch class="!inline-block" />
+        <button class="btn btn-ghost btn-circle btn-sm mx-1" @click="searchModalShow = true">
+          <Icon icon="mdi:magnify" class="text-2xl text-gray-500 dark:text-gray-400" />
+        </button>
         <NavBarWallet />
       </div>
+      <NavbarSearch class="!inline-block" :searchModalShow="searchModalShow" :closeSearchModal="closeSearchModal" />
 
       <!-- 👉 Pages -->
       <div style="min-height: calc(100vh - 180px);">

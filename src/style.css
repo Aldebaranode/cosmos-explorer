@@ -25,7 +25,6 @@ body {
   --text-main: #333;
   --text-secondary: #4b525d;
   --bg-active: #fbfbfc;
-  --pc: #333
 }
 
 html.dark,
@@ -33,7 +32,6 @@ html[data-theme='dark'] {
   --text-main: #f7f7f7;
   --text-secondary: #6f6e84;
   --bg-active: #242b40;
-  --pc: #f3f3f3;
 }
 
 .table th:first-child {
@@ -57,7 +55,7 @@ html[data-theme='dark'] {
 }
 
 ::-webkit-scrollbar {
-  width: 17px;
+  width: 8px;
   background-color: rgba(0, 0, 0, 0.1);
   border-radius: 8px;
 }

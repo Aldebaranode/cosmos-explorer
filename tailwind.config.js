@@ -8,10 +8,10 @@ module.exports = {
       colors: {
         yes: '#3fb68b',
         no: '#ff5353',
-        info: '#00b2ff',
-        main: 'var(--text-main)',
-        secondary: 'var(--text-secondary)',
-        active: 'var(--bg-active)',
+        // info: '#00b2ff',
+        // main: 'var(--text-main)',
+        // secondary: 'var(--text-secondary)',
+        // active: 'var(--bg-active)',
       },
     },
   },
@@ -23,12 +23,12 @@ module.exports = {
     themes: [
       {
         light: {
-          ...require('daisyui/src/theming/themes')['fantasy'],
+          ...require('daisyui/src/theming/themes')['light'],
         },
       },
       {
         dark: {
-          ...require('daisyui/src/theming/themes')['dracula'],
+          ...require('daisyui/src/theming/themes')['dark'],
           // 'base-100': '#31363F',
           // 'base-200': '#222831',
           // // 'base-100': '#2a334c',
