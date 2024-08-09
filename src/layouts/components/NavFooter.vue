@@ -1,13 +1,12 @@
 <template>
   <!-- footer -->
   <footer
-    class="flex items-center h-12 mt-5 text-sm bg-gray-100 dark:bg-[#171d30] py-2 z-10 w-full"
+    class="flex items-center mt-6 text-sm light:bg-gray-100 dark:bg-dark py-8 z-10 px-8 w-full"
   >
     <div class="flex flex-1">
       &copy;&nbsp;
       {{ new Date().getFullYear() }}&nbsp;
-      Made With&nbsp;
-      <img src="../../assets/images/heart.svg" />&nbsp;
+      Made 
       By&nbsp;
       <a
         class="link link-primary no-underline"
@@ -15,6 +14,17 @@
         target="_blank"
         rel="noopener noreferrer"
         >Ping.pub</a
+      >
+    </div>
+    <div class="flex flex-1">
+      Modified&nbsp;
+      By&nbsp;
+      <a
+        class="link link-primary no-underline"
+        href="https://aldebaranode.xyz"
+        target="_blank"
+        rel="noopener noreferrer"
+        >Aldebaranode</a
       >
     </div>
     <div
@@ -28,7 +38,7 @@
       >
       <a
         class="link link-primary no-underline"
-        href="https://github.com/ping-pub/explorer"
+        href="https://github.com/aldebaranode/cosmos-explorer"
         target="noopener noreferrer"
         >Github</a
       >

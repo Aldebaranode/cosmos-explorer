@@ -9,6 +9,9 @@ import LazyLoad from 'lazy-load-vue3';
 import router from './router';
 import { useBaseStore } from './stores/useBaseStore';
 
+import { PerfectScrollbarPlugin } from 'vue3-perfect-scrollbar';
+import 'vue3-perfect-scrollbar/style.css';
+
 // Create vue app
 const app = createApp(App);
 // Use plugins
@@ -16,6 +19,7 @@ app.use(i18n);
 app.use(createPinia());
 app.use(router);
 app.use(LazyLoad, { component: true });
+app.use(PerfectScrollbarPlugin);
 // Mount vue app
 app.mount('#app');
 
