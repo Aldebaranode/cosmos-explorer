@@ -84,11 +84,11 @@ baseStore.$subscribe((_, state) => {
   if (newHeight > latest.value) {
     latest.value = newHeight;
     // initialize if it's the first time
-    if(!preload.value) {
+    if (!preload.value) {
       preFill();
       preload.value = true;
     }
-    
+
     if (Number(state.latest.block.header.height) % 7 === 0) updateTotalSigningInfo();
     fillblock(state.latest);
   }
@@ -112,7 +112,7 @@ onMounted(() => {
 
 function preFill() {
 
-  if(latest.value > 50 && baseStore.recents.length >= 49 ) return
+  if (latest.value > 50 && baseStore.recents.length >= 49) return
   // preload 50 blocks if recent blocks are not enough
   let promise = Promise.resolve();
   for (let i = latest.value - baseStore.recents.length; i > latest.value - 50 && i > 1; i -= 1) {
@@ -179,7 +179,7 @@ function fetchAllKeyRotation() {
 
 <template>
   <div>
-    <div class="tabs tabs-boxed bg-transparent mb-4">
+    <div class="tabs tabs-boxed !flex bg-transparent mb-4">
       <a class="tab text-gray-400 capitalize" :class="{ 'tab-active': tab === '3' }" @click="changeTab('3')">{{
         $t('uptime.overall') }}</a>
       <a class="tab text-gray-400 capitalize" :class="{ 'tab-active': tab === '2' }" @click="changeTab('2')">{{
@@ -188,7 +188,7 @@ function fetchAllKeyRotation() {
         <a class="tab text-gray-400 capitalize">{{ $t('uptime.customize') }}</a>
       </RouterLink>
     </div>
-    <div class="bg-base-100 px-5 pt-5">
+    <div class="bg-base-200 px-5 pt-5">
       <div class="flex items-center gap-x-4">
         <input type="text" v-model="keyword" placeholder="Keywords to filter validators"
           class="input input-sm w-full flex-1 border border-gray-200 dark:border-gray-600" />
@@ -247,7 +247,7 @@ function fetchAllKeyRotation() {
             </td>
             <td class="text-right">
               <span :class="v.uptime && v.uptime > 0.95 ? 'text-green-500' : 'text-red-500'
-        ">
+                ">
                 <div class="tooltip" :data-tip="`${v.missed_blocks_counter} missing blocks`">
                   {{ format.percent(v.uptime) }}
                 </div>
@@ -262,11 +262,11 @@ function fetchAllKeyRotation() {
             </td>
             <td class="text-xs text-right">
               <span v-if="v.signing && v.signing.jailed_until.startsWith('1970')" class="text-right">{{
-        format.percent(
-          Number(v.signing.index_offset) /
-          (latest - Number(v.signing.start_height))
-        )
-      }}</span>
+                format.percent(
+                  Number(v.signing.index_offset) /
+                  (latest - Number(v.signing.start_height))
+                )
+                }}</span>
               {{ v.signing?.index_offset }}
             </td>
             <td class="text-right">{{ v.signing?.start_height }}</td>
@@ -278,7 +278,7 @@ function fetchAllKeyRotation() {
                 {{ $t('uptime.minimum_uptime') }}:
                 <span class="lowercase tooltip" :data-tip="`Window size: ${slashingParam.signed_blocks_window}`"><span
                     class="ml-2 btn btn-error btn-xs">{{
-        format.percent(slashingParam.min_signed_per_window)
+                      format.percent(slashingParam.min_signed_per_window)
                     }}</span>
                 </span>
               </td>

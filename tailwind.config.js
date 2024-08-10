@@ -1,5 +1,4 @@
 /** @type {import('tailwindcss').Config} */
-console.log(require('daisyui/src/theming/themes')['dracula'])
 module.exports = {
   darkMode: ['class'],
   content: ['./index.html', './src/**/*.{vue,js,ts,jsx,tsx}'],
@@ -29,10 +28,6 @@ module.exports = {
       {
         dark: {
           ...require('daisyui/src/theming/themes')['dark'],
-          // 'base-100': '#31363F',
-          // 'base-200': '#222831',
-          // // 'base-100': '#2a334c',
-          // // 'base-200': '#252d37'
         },
       },
     ],

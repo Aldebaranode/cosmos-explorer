@@ -12,14 +12,12 @@
         &copy;
         {{ new Date().getFullYear() }}&nbsp;
       </span>
-      Made
-      By&nbsp;
+      Made By&nbsp;
       <a class="link link-primary no-underline" href="https://ping.pub" target="_blank"
         rel="noopener noreferrer">Ping.pub</a>
     </div>
     <div class="flex flex-1">
-      Modified&nbsp;
-      By&nbsp;
+      Modified By&nbsp;
       <a class="link link-primary no-underline" href="https://aldebaranode.xyz" target="_blank"
         rel="noopener noreferrer">Aldebaranode</a>
     </div>

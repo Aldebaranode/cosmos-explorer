@@ -1,16 +1,13 @@
 // import 'ping-widget';
 import App from '@/App.vue';
 import i18n from '@/plugins/i18n';
-import '@/style.css';
 import { createApp, ref } from 'vue';
 import { createPinia } from 'pinia';
 import LazyLoad from 'lazy-load-vue3';
 
 import router from './router';
 import { useBaseStore } from './stores/useBaseStore';
-
-import { PerfectScrollbarPlugin } from 'vue3-perfect-scrollbar';
-import 'vue3-perfect-scrollbar/style.css';
+import '@/style.css';
 
 // Create vue app
 const app = createApp(App);
@@ -19,7 +16,6 @@ app.use(i18n);
 app.use(createPinia());
 app.use(router);
 app.use(LazyLoad, { component: true });
-app.use(PerfectScrollbarPlugin);
 // Mount vue app
 app.mount('#app');
 

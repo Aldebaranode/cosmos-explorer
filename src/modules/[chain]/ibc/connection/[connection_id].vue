@@ -53,9 +53,9 @@ function loadChannel(channel: string, port: string) {
 
 function pageload(pageNum: number) {
   if (direction.value === 'In') {
-    fetchSendingTxs(channel_id.value, port_id.value, pageNum -1)
+    fetchSendingTxs(channel_id.value, port_id.value, pageNum - 1)
   } else {
-    fetchSendingTxs(channel_id.value, port_id.value, pageNum -1)
+    fetchSendingTxs(channel_id.value, port_id.value, pageNum - 1)
   }
 
 }
@@ -128,7 +128,7 @@ function color(v: string) {
       </div>
     </div>
 
-    <div class="bg-base-100 px-4 pt-3 pb-4 rounded mb-4 shadow">
+    <div class="bg-base-200 px-4 pt-3 pb-4 rounded mb-4 shadow">
       <h2 class="card-title mb-4 overflow-hidden">{{ $t('ibc.title_2') }}<span class="ml-2 text-sm">{{
         clientState.client_state?.['@type'] }}</span></h2>
       <div class="overflow-x-auto grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -184,8 +184,9 @@ function color(v: string) {
             </tr>
             <tr>
               <td colspan="2">
-                <div class="flex justify-between"><span>{{ $t('ibc.allow_update_after_misbehaviour') }}: </span> <span>{{
-                  clientState.client_state?.allow_update_after_misbehaviour }}</span></div>
+                <div class="flex justify-between"><span>{{ $t('ibc.allow_update_after_misbehaviour') }}: </span>
+                  <span>{{
+                    clientState.client_state?.allow_update_after_misbehaviour }}</span></div>
               </td>
             </tr>
             <tr>
@@ -197,7 +198,7 @@ function color(v: string) {
 
       </div>
     </div>
-    <div class="bg-base-100 px-4 pt-3 pb-4 rounded mb-4 shadow overflow-hidden">
+    <div class="bg-base-200 px-4 pt-3 pb-4 rounded mb-4 shadow overflow-hidden">
       <h2 class="card-title">{{ $t('ibc.channels') }}</h2>
       <div class="overflow-auto">
         <table class="table w-full mt-4">
@@ -234,7 +235,7 @@ function color(v: string) {
               <td>
                 <a href="#">{{
                   v[ibcStore.sourceField].channel_id
-                }}</a>
+                  }}</a>
               </td>
               <td>{{ v[ibcStore.sourceField].port_id }}</td>
             </tr>
@@ -254,7 +255,7 @@ function color(v: string) {
               <td>
                 <a href="#" @click="loadChannel(v.channel_id, v.port_id)">{{
                   v.channel_id
-                }}</a>
+                  }}</a>
               </td>
               <td>{{ v.port_id }}</td>
               <td>

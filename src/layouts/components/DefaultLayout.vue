@@ -16,7 +16,6 @@ import NavBarI18n from './NavBarI18n.vue';
 import NavBarWallet from './NavBarWallet.vue';
 import type { NavGroup, NavLink, NavSectionTitle, VerticalNavItems } from '../types';
 import dayjs from 'dayjs';
-import { PerfectScrollbar } from 'vue3-perfect-scrollbar'
 
 let searchModalShow = ref(false);
 const dashboard = useDashboard();
@@ -203,7 +202,7 @@ dayjs()
     <div class="xl:!ml-64 px-3 pt-4">
       <!-- header -->
       <div class="flex items-center py-3 bg-base-100 mb-4 rounded px-4 sticky top-0 z-10 
-        bg-opacity-60 backdrop-blur transition-shadow duration-100 [transform:translate3d(0,0,0)] 
+        bg-opacity-60 backdrop-blur-sm transition-shadow duration-100 [transform:translate3d(0,0,0)] 
         shadow-sm
         ">
         <div class="text-2xl pr-3 cursor-pointer xl:!hidden" @click="sidebarShow = true">

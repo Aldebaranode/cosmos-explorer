@@ -19,7 +19,7 @@ const list = computed(() => {
 </script>
 <template>
   <div>
-    <div class="tabs tabs-boxed bg-transparent mb-4">
+    <div class="tabs tabs-boxed !flex bg-transparent mb-4">
       <a class="tab text-gray-400 uppercase" :class="{ 'tab-active': tab === 'blocks' }" @click="tab = 'blocks'">{{
         $t('block.recent') }}</a>
       <RouterLink class="tab text-gray-400 uppercase"
@@ -32,7 +32,8 @@ const list = computed(() => {
       <TxsInBlocksChart />
 
       <div class="grid xl:!grid-cols-6 md:!grid-cols-4 grid-cols-1 gap-3">
-        <RouterLink v-for="item in list" class="flex flex-col justify-between dark:bg-base-200 rounded p-4 shadow bg-base-100"
+        <RouterLink v-for="item in list"
+          class="flex flex-col justify-between dark:bg-base-200 rounded p-4 shadow bg-base-100"
           :to="`/${chain}/block/${item.block.header.height}`">
           <div class="flex justify-between">
             <h3 class="text-md font-bold sm:!text-lg">
