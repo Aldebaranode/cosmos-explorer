@@ -79,7 +79,7 @@ dayjs()
   <div class="light:bg-gray-100 dark:bg-dark">
     <!-- sidebar -->
     <div
-      class="w-64 fixed z-50 left-0 top-0 bottom-0 overflow-auto bg-base-100 border-r border-gray-100 dark:border-gray-700"
+      class="w-64 fixed z-50 left-0 top-0 bottom-0 overflow-auto bg-base-200 border-r border-gray-100 dark:border-gray-700"
       :class="{ block: sidebarShow, 'hidden xl:!block': !sidebarShow }">
       <div class="flex justify-between mt-1 pl-4 py-4 mb-1">
         <RouterLink to="/" class="flex items-center">
@@ -114,7 +114,7 @@ dayjs()
             </div>
           </div>
           <div class="collapse-content">
-            <div v-for="(el, key) of item?.children" class="menu bg-base-100 w-full !p-0">
+            <div v-for="(el, key) of item?.children" class="menu bg-base-200 w-full !p-0">
               <RouterLink v-if="isNavLink(el)" @click="sidebarShow = false"
                 class="hover:bg-gray-100 dark:hover:bg-[#373f59] rounded cursor-pointer px-3 py-2 flex items-center"
                 :class="{
@@ -136,7 +136,7 @@ dayjs()
               </RouterLink>
             </div>
             <div v-if="index === 0 && dashboard.networkType === NetworkType.Testnet"
-              class="menu bg-base-100 w-full !p-0">
+              class="menu bg-base-200 w-full !p-0">
               <RouterLink
                 class="hover:bg-gray-100 dark:hover:bg-[#373f59] rounded cursor-pointer px-3 py-2 flex items-center"
                 :to="`/${blockchain.chainName}/faucet`">
@@ -201,7 +201,7 @@ dayjs()
     </div>
     <div class="xl:!ml-64 px-3 pt-4">
       <!-- header -->
-      <div class="flex items-center py-3 bg-base-100 mb-4 rounded px-4 sticky top-0 z-10 
+      <div class="flex items-center py-3 bg-base-200 mb-4 rounded px-4 sticky top-0 z-10 
         bg-opacity-60 backdrop-blur-sm transition-shadow duration-100 [transform:translate3d(0,0,0)] 
         shadow-sm
         ">
