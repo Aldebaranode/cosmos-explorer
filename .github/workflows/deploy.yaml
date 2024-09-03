@@ -51,3 +51,4 @@ jobs:
             docker container stop cosmos-explorer
             docker container rm cosmos-explorer
             docker run -d --name cosmos-explorer -p 5001:80 syhdtmp/cosmos-explorer:main
+            docker rmi $(docker images syhdtmp/cosmos-explorer -f "dangling=true" -q)
