@@ -357,11 +357,11 @@ const amount = computed({
               </td>
               <td>
                 <div>
-                  <label for="delegate" class="btn !btn-xs !btn-primary btn-ghost rounded-sm mr-2"
+                  <label for="delegate" class="btn !btn-xs !btn-primary rounded-sm mr-2"
                     @click="dialog.open('delegate', { validator_address: item.delegation.validator_address }, updateState)">
                     {{ $t('account.btn_delegate') }}
                   </label>
-                  <label for="withdraw" class="btn !btn-xs !btn-primary btn-ghost rounded-sm"
+                  <label for="withdraw" class="btn !btn-xs !btn-primary rounded-sm"
                     @click="dialog.open('withdraw', { validator_address: item.delegation.validator_address }, updateState)">
                     {{ $t('index.btn_withdraw_reward') }}
                   </label>
